@@ -17,14 +17,7 @@
   <title>Movie Evaluation</title>
 </head>
 <body>
-<%
-	String userID = null;
-	if (session.getAttribute("userID") != null) {
-		userID = (String) session.getAttribute("userID");
-	}
-%>
-	<nav class="navbar navbar-expand-lg navbar-light fixed-top"
-		id="mainNav">
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
 		<div class="container">
 			<a class="navbar-brand" href="index.jsp">MovieEval</a>
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,9 +35,8 @@
 						<a class="nav-link" href="Animation.jsp">Animation</a></li>
 				</ul>
 			</div>
-			<%
-				if (userID == null) {
-			%>
+			<c:choose>
+			<c:when test="${userID eq null }">
     		<div class="collapse navbar-collapse" id="navbarResponsive">
         		<ul class="navbar-nav ml-auto">
            		 	<li class="nav-item">
@@ -55,9 +47,8 @@
             			<i class="fa fa-user"></i> Create</a></li>
         		</ul>
     		</div>
-    		<%
-				} else {
-			%>
+    		</c:when>
+    		<c:otherwise>
     		<div class="collapse navbar-collapse" id="navbarResponsive">
         		<ul class="navbar-nav ml-auto">
            		 	<li class="nav-item">
@@ -65,9 +56,8 @@
 						<i class="fa fa-user"></i> Logout</a></li>
         		</ul>
     		</div>
-    		<%
-				}
-			%>
+			</c:otherwise>
+			</c:choose>
 		</div>
 	</nav>
 	<!-- The Login Modal -->

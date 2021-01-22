@@ -1,12 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.io.PrintWriter"%>
 <%@ page import="content.MovieVO"%>
 <%@ page import="content.MovieDAO"%>
 <%@ page import="comment.CommentVO"%>
 <%@ page import="comment.CommentDAO"%>
 <%@ page import="java.util.ArrayList"%>
-<jsp:include page="views/common/10_header.jsp"></jsp:include>
 <%	
 	String userID = null;
 	if (session.getAttribute("userID") != null) {
@@ -156,5 +155,3 @@
 		</div>
 	</div>
 </main>
-
-<jsp:include page="views/common/90_footer.jsp"></jsp:include>

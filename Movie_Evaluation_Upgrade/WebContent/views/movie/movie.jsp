@@ -36,19 +36,18 @@
 </header>
   <section class="featured spad">
         <div class="container">
-<form method="get" action="./index.jsp" class="form-inline mt-3">
-
+		<form method="get" action="./index.jsp" class="form-inline mt-3">
 			<select name="lectureDivide" class="form-control mx-1 mt-2">
 				<option value="All">All</option>
 				<option value="Title">Title</option>
 				<option value="Director">Director</option>
-			</select>
-			<input type="text" name="search" class="form-control mx-1 mt-2">
+			</select> <input type="text" name="search" class="form-control mx-1 mt-2">
 			<button type="submit" class="btn btn-secondary mx-1 mt-2">Search</button>
 			<c:choose>
-			<c:when test="${userID eq 'KING' }">
-			<a class="btn btn-secondary ml-auto mx-1 mt-2" href="moviePosting.jsp">Posting</a>
-			</c:when>
+				<c:when test="${userID eq 'KING' }">
+					<a class="btn btn-secondary ml-auto mx-1 mt-2"
+						href="views/movie/moviePosting.jsp">Posting</a>
+				</c:when>
 			</c:choose>
 		</form>
 		<hr>
@@ -76,7 +75,7 @@
 					</div>
 					<div class="featured__item__text">
 						<h6>
-							<a href="movieDetail.jsp?movieID=<%= list.get(i).getMovieID() %>"><%= list.get(i).getMovieTitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("/n", "<br>") %></a>
+							<a href="index.jsp?rp=detail?movieID=<%= list.get(i).getMovieID() %>"><%= list.get(i).getMovieTitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("/n", "<br>") %></a>
 						</h6>
 					</div>
 				</div>

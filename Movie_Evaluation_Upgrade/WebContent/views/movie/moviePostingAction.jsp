@@ -23,7 +23,7 @@
 		script.println("location.href = 'index.jsp'");
 		script.println("</script>");
 	} else {
-		if (movie.getMovieTitle() == null || movie.getMovieContent() == null || movie.getMovieThumbnail() == null 
+		if (movie.getMovieTitle() == null || movie.getMovieContent() == null  
 			|| movie.getMovieActor() == null || movie.getMovieDirector() == null || movie.getMovieLength() == null
 			|| movie.getMoviePremiere() == null || movie.getMovieShow() == null) {
 			PrintWriter script = response.getWriter();
@@ -45,7 +45,7 @@
 		} else {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("location.href = 'movie.jsp'");
+			script.println("location.href = '../../index.jsp?rp=movie'");
 			script.println("</script>");
 		}
 	}

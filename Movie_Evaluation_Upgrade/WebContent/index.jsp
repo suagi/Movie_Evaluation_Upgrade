@@ -11,6 +11,9 @@
 	<c:when test="${view eq 'movie' }">
 		<c:set var="jsp" value="movie/movie.jsp"/>
 	</c:when>
+	<c:when test="${view eq 'detail' }">
+		<c:set var="jsp" value="movie/movieDetail.jsp"/>
+	</c:when>
 </c:choose>
 <jsp:include page="views/common/10_header.jsp"></jsp:include>
 <jsp:include page="views/${jsp }"></jsp:include>
